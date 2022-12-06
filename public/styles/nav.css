@@ -6,9 +6,11 @@
 
 .nav-bar {
   height: 120px;
+  width: 100%;
   font-size: 35px;
   background-color: #4056A1;
   display: flex;
+  position: fixed;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;

@@ -1,0 +1,43 @@
+/**
+*
+* Form Section Styling
+*
+*/
+
+
+.new-tweet {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 25%;
+  width: 100%;
+
+}
+
+.form-input {
+  background-color: transparent;
+  padding: 2px;
+  border: none;
+  border-bottom: solid black 2px;
+  width: 100%;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.form-input:focus {
+  outline: none;
+}
+
+.form-button {
+  background-color: #4056A1;
+  color: #FFFFFF;
+  border: none;
+  padding: 0.5em;
+  font-family: 'Bungee', cursive;
+  font-size: 17px;
+}
+
+.button-text-count {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

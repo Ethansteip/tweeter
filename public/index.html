@@ -16,6 +16,10 @@
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <!--  Nav-bar css -->
     <link rel="stylesheet" href="/styles/nav.css">
+    <!-- Header css -->
+    <link rel="stylesheet" href="/styles/header.css">
+    <!-- Form css -->
+    <link rel="stylesheet" href="/styles/form.css">
     <!--  Font-Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 
@@ -39,17 +43,31 @@
     </nav>
 
     <!--  Header Section -->
-    <header>
-      <div>
-        <img src="Tweeter/public/images/profile-hex.png" alt="Profile picture of Tweeter user">
+    <header class="header-container">
+      <div class="avatar">
+        <img src="/images/profile-hex.png" alt="Profile picture of Tweeter user">
       </div>
-      <br>
+        <br>
       <div>
-        <h2>Your Name</h2>
+        <h2>Ethan <span style="font-weight: 300;">Steip</span></h2>
       </div>
     </header>
 
     <!-- Page-specific (main) content here -->
-    <main class="container"></main>
+    <main class="main-container">
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <form action="/tweets" method="POST">
+          <label for="tweet-text" style="font-weight: 600;">What are you humming about?</label>
+          <input class="form-input" name="text" id="tweet-text" cols="30" rows="5"></input>
+          <div class="button-text-count">
+            <button class="form-button" type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    
   </body>
 </html>
