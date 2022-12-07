@@ -49,3 +49,7 @@
 .counter {
   font-family: 'Bungee', cursive;
 }
+
+.negative-number {
+  color: red;
+}

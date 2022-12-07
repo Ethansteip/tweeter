@@ -5,26 +5,29 @@
  */
 
 
+// Questions:
+// 1.) "This" points to my text area DOM node. How can I leverage "This" while also access the jQuery methods?
+// 2.) 
+
+
 $(document).ready(function() {
 
   //const characterCount = document.getElementById("character-count-input");
   
   // Decrement tweeter count for each character that is typed.
-  $("#character-count-input").on("keydown", function() {
+  $("#character-count-input").keyup(function() {
 
-    const characterCount = $("#character-count-input").val();
-    console.log(characterCount);
+    let charactersRemaining = 140 - $(this).val().length;
 
-    // let characterCount = 140 - this.value.length + 1;
+    const characterCounterElement = $(this).siblings("div").children("output");
 
-    // $("#character-counter").html(characterCount);
+    characterCounterElement.html(charactersRemaining);
 
-    // if (characterCount < 0) {
-    //   $("#character-counter").addClass("counter");
-    // } else {
-    //   $("#character-counter").removeClass("counter");
-    // }
-
+    if (charactersRemaining < 0) {
+      characterCounterElement.addClass("negative-number");
+    } else {
+      characterCounterElement.removeClass("negative-number");
+    }
   });
 
 });

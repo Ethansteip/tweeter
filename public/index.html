@@ -14,12 +14,14 @@
 
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-    <!--  Nav-bar css -->
+    <!--  Nav-bar section css -->
     <link rel="stylesheet" href="/styles/nav.css">
-    <!-- Header css -->
+    <!-- Header section css -->
     <link rel="stylesheet" href="/styles/header.css">
-    <!-- Form css -->
+    <!-- Form section css -->
     <link rel="stylesheet" href="/styles/form.css">
+    <!-- Tweet Section css -->
+    <link rel="stylesheet" href="/styles/tweet.css">
     <!--  Font-Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 
@@ -55,6 +57,8 @@
 
     <!-- Page-specific (main) content here -->
     <main class="main-container">
+
+      <!-- Tweet Submission Form -->
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
         <form action="/tweets" method="POST">
@@ -65,7 +69,29 @@
             <output id="character-counter" class="counter" name="counter" class="" for="tweet-text">140</output>
           </div>
         </form>
-      </section>
+
+        <!-- Tweets -->
+        <article class="article-tweet">
+          <header>
+            <div class="user-name-avatar">
+              <img src="/images/man.png" alt="User's tweeter profile picture" width="70">
+              <p>Ethan Steip</p>
+            </div>
+            <h3 class="user-handle">@UserHandle</h3>
+          </header>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+          <footer>
+           <time>10 days ago</time>
+           <section class="icons-section">
+            <i class="fa-sharp fa-solid fa-flag fa-lg icon"></i>
+            <i class="fa-sharp fa-solid fa-retweet fa-lg icon"></i>
+            <i class="fa-sharp fa-solid fa-heart fa-lg icon"></i>
+           </section>
+          </footer>
+        </article>
+
+
+
     </main>
 
     <!-- ccharacter counter -->

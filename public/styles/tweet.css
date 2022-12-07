@@ -1,0 +1,61 @@
+/**
+*
+* Tweet section styling
+*
+*/
+
+.article-tweet {
+  margin-top: 7%;
+  padding:  20px;
+  border:  solid #545149 4px;
+  transition: all 0.4s ease;
+}
+
+.article-tweet:hover {
+  box-shadow: 10px 10px 2px 1px rgb(64, 86, 161, 0.2);
+}
+
+.article-tweet header {
+  display:  flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user-name-avatar {
+  display:  flex;
+  flex-direction: row;
+  width: auto;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 300;
+}
+
+.user-handle {
+  color: #d1d6e6;
+}
+
+.article-tweet footer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-top: solid #545149 4px;
+  padding-top: 1%;
+  font-size: medium;
+}
+
+.icons-section {
+  display: flex;
+  flex-direction: row;
+  gap: 10%;
+}
+
+.icon {
+  color: #4056A1;
+  transition: 0.2s;
+}
+
+.icon:hover {
+  color: goldenrod;
+}
