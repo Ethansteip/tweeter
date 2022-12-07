@@ -18,3 +18,7 @@
 .avatar {
   margin-top: 120px;
 }
+
+h2 > span {
+  font-weight: 300;
+}

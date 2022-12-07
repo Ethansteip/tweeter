@@ -7,20 +7,24 @@
 
 $(document).ready(function() {
 
-  const characterCount = document.getElementById("character-count-input");
+  //const characterCount = document.getElementById("character-count-input");
   
+  // Decrement tweeter count for each character that is typed.
   $("#character-count-input").on("keydown", function() {
-    let characterCount = 140 - this.value.length + 1;
 
-    $("#character-counter").html(characterCount);
+    const characterCount = $("#character-count-input").val();
+    console.log(characterCount);
 
-    if (characterCount < 0) {
-      $("#character-counter").addClass("counter");
-    } else {
-      $("#character-counter").removeClass("counter");
-    }
+    // let characterCount = 140 - this.value.length + 1;
+
+    // $("#character-counter").html(characterCount);
+
+    // if (characterCount < 0) {
+    //   $("#character-counter").addClass("counter");
+    // } else {
+    //   $("#character-counter").removeClass("counter");
+    // }
 
   });
-
 
 });

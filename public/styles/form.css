@@ -13,6 +13,10 @@
 
 }
 
+.tweet-input-label {
+  font-weight: 600;
+}
+
 .form-input {
   background-color: transparent;
   padding: 2px;
@@ -43,5 +47,5 @@
 }
 
 .counter {
-  color: red;
+  font-family: 'Bungee', cursive;
 }

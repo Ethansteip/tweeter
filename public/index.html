@@ -37,7 +37,7 @@
         <span class="tweeter-logo">tweeter</span>
       </a>
       <div class="new-tweet-container">
-        <a class="new-tweet-link" href="#"><span style="font-weight: 600;">Write</span> a new tweet</a>
+        <a class="new-tweet-link" href="#"><span>Write</span> a new tweet</a>
         <i class="fa-solid fa-angles-down new-tweet-chevron"></i>
       </div>
     </nav>
@@ -49,7 +49,7 @@
       </div>
         <br>
       <div>
-        <h2>Ethan <span style="font-weight: 300;">Steip</span></h2>
+        <h2>Ethan <span>Steip</span></h2>
       </div>
     </header>
 
@@ -58,11 +58,11 @@
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
         <form action="/tweets" method="POST">
-          <label for="tweet-text" style="font-weight: 600;">What are you humming about?</label>
+          <label for="tweet-text" class="tweet-input-label">What are you humming about?</label>
           <textarea id="character-count-input" class="form-input" name="text" id="tweet-text" cols="30" rows="1"></textarea>
           <div class="button-text-count">
             <button class="form-button" type="submit">Tweet</button>
-            <output id="character-counter" name="counter" class="" for="tweet-text">140</output>
+            <output id="character-counter" class="counter" name="counter" class="" for="tweet-text">140</output>
           </div>
         </form>
       </section>
