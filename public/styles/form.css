@@ -8,7 +8,6 @@
 .new-tweet {
   display: flex;
   flex-direction: column;
-  margin-bottom: 25%;
   width: 100%;
 
 }
@@ -38,6 +37,11 @@
   padding: 0.5em;
   font-family: 'Bungee', cursive;
   font-size: 17px;
+  transition: all 0.2s ease;
+}
+
+.form-button:hover {
+  background-color: #2b3a6b;
 }
 
 .button-text-count {

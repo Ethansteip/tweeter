@@ -27,9 +27,6 @@
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-    <!-- App JS -->
-    <script type="text/javascript" src="/scripts/client.js"></script>
   </head>
 
   <body>
@@ -56,12 +53,12 @@
     </header>
 
     <!-- Page-specific (main) content here -->
-    <main class="main-container">
+    <main id="main-container" class="main-container">
 
       <!-- Tweet Submission Form -->
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
-        <form action="/tweets" method="POST">
+        <form id="tweet-form">
           <label for="tweet-text" class="tweet-input-label">What are you humming about?</label>
           <textarea id="character-count-input" class="form-input" name="text" id="tweet-text" cols="30" rows="1"></textarea>
           <div class="button-text-count">
@@ -70,30 +67,15 @@
           </div>
         </form>
 
-        <!-- Tweets -->
-        <article class="article-tweet">
-          <header>
-            <div class="user-name-avatar">
-              <img src="/images/man.png" alt="User's tweeter profile picture" width="70">
-              <p>Ethan Steip</p>
-            </div>
-            <h3 class="user-handle">@UserHandle</h3>
-          </header>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
-          <footer>
-           <time>10 days ago</time>
-           <section class="icons-section">
-            <i class="fa-sharp fa-solid fa-flag fa-lg icon"></i>
-            <i class="fa-sharp fa-solid fa-retweet fa-lg icon"></i>
-            <i class="fa-sharp fa-solid fa-heart fa-lg icon"></i>
-           </section>
-          </footer>
-        </article>
+        <!-- Tweets - rendered dynamically through our client.js file -->
+        
 
 
 
     </main>
 
+    <!-- App JS -->
+    <script type="text/javascript" src="/scripts/client.js"></script>
     <!-- ccharacter counter -->
     <script src="/scripts/composer-char-counter.js"></script>
   </body>
