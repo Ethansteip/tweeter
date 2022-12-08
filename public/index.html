@@ -12,6 +12,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap" rel="stylesheet">
 
+    <!-- Timeago CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <!--  Nav-bar section css -->
@@ -63,11 +66,16 @@
           <textarea id="character-count-input" class="form-input" name="text" id="tweet-text" cols="30" rows="1"></textarea>
           <div class="button-text-count">
             <button class="form-button" type="submit">Tweet</button>
+            <div class="tweet-error-message">
+              <i class="fa-sharp fa-solid fa-square-exclamation"></i>
+              <label for="tweet-text"></label>
+            </div>
             <output id="character-counter" class="counter" name="counter" class="" for="tweet-text">140</output>
           </div>
         </form>
 
         <!-- Tweets - rendered dynamically through our client.js file -->
+        <section id="tweet-container"></section>
         
 
 

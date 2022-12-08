@@ -8,7 +8,6 @@
   height: 120px;
   width: 100%;
   font-size: 35px;
-  background-color: #4056A1;
   display: flex;
   position: fixed;
   flex-direction: row;
@@ -48,14 +47,14 @@ a > span {
 
 @keyframes updown {
   0% {
-    transform: translateY(-10%);
+    transform: translateY(-15%);
   }
 
   50% {
-    transform: translateY(10%);
+    transform: translateY(15%);
   }
 
   100% {
-    transform: translateY(-10%);
+    transform: translateY(-15%);
   }
 }

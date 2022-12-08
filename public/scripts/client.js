@@ -6,17 +6,38 @@
 
 $(document).ready(function() {
 
-// Handle tweet from submission
+/**
+ * 
+ * Handle tweet form submission.
+ * 
+ */
 
 $( "#tweet-form" ).submit(function( event ) {
+
   event.preventDefault();
-  console.log("The form has been submitted!");
 
   const tweetData = $(this).serialize();
+  const inputLength = $("#character-count-input").val().length;
 
-  $.post( "tweets", tweetData, function(data, status) {
-    console.log("Data: ", data, "\nStatus: ", status);
-  });
+  // Validate that the form input is neither empty or too long before submitting.
+  if (inputLength === 0) {
+    $('.tweet-error-message').html("Sorry, your tweet didn't contain any information. Please try again!");
+    $('.tweet-error-message').slideDown(1000).css('display', 'flex');
+  } else if (inputLength > 140) {
+    $('.tweet-error-message').html("Sorry, your tweet was too long. Please keep tweets under 140 characters.");
+    $('.tweet-error-message').slideDown(1000).css('display', 'flex');
+  } else {
+    $('.tweet-error-message').slideUp(1000);
+    $.post( "tweets", tweetData, function(data, status) {
+      console.log("The form has been submitted!");
+      console.log("Data: ", data, "\nStatus: ", status);
+      $('#character-count-input').val("");
+      // Reload newest tweets
+      loadTweets();
+      
+    });
+  }
+  
 });
 
 /**
@@ -24,20 +45,27 @@ $( "#tweet-form" ).submit(function( event ) {
  * loadTweets - requests all tweets from /tweets and passes them to the renderTweets function.
  * 
  */
+
 const loadTweets = () => {
   $.get('/tweets')
     .then(function(response) {
-      console.log(response);
       renderTweets(response);
+    })
+    .catch(err => {
+      console.log("Error: ", err);
     })
 };
 
 loadTweets();
 
+/**
+ * 
+ * createTweetElement - returns an html string for each tweet that is passed the function.
+ * @params {array} tweetObj - a tweet in the form of an object.
+ * 
+ */
 
 const createTweetElement = (tweetObj) => {
-
-  //const tweetDuration = Date.now() - tweetData.createdAt;
 
   const $tweetHtml = $(`
   <article class="article-tweet">
@@ -48,9 +76,9 @@ const createTweetElement = (tweetObj) => {
       </div>
       <h3 class="user-handle">${tweetObj.user.handle}</h3>
     </header>
-      <p>${tweetObj.content.text}</p>
+      <p>${escape(tweetObj.content.text)}</p>
     <footer>
-      <time>${tweetObj.created_at}</time>
+      <time id="timeAgo">${timeago.format(tweetObj.created_at)}</time>
       <section class="icons-section">
       <i class="fa-sharp fa-solid fa-flag fa-lg icon"></i>
       <i class="fa-sharp fa-solid fa-retweet fa-lg icon"></i>
@@ -62,65 +90,32 @@ const createTweetElement = (tweetObj) => {
   return $tweetHtml;
 }
 
+/**
+ * 
+ * escape - encodes user input to avoid XSS vulnrabilities. 
+ * @param {string} content - the user's input. 
+ * 
+ */
+
+const escape = function (content) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(content));
+  return div.innerHTML;
+};
+
+/**
+ * 
+ * renderTweets - calls the createTweetElement for each tweet in our database and appends it to the DOM.
+ * @params {array} tweetObj - and array of tweet objects.
+ * 
+ */
+
 const renderTweets = (tweetArray) => {
   for (const tweet of tweetArray) {
     let $tweet = createTweetElement(tweet);
-    $('#main-container').append($tweet);
+    $('#tweet-container').prepend($tweet);
+
   }
 }
-
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  },
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  }
-]
-
-
-
-//const $tweet = createTweetElement(tweetData);
-//console.log($tweet);
-
-//renderTweets(data);
 
 });
