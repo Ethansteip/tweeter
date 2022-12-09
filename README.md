@@ -4,7 +4,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/Ethansteip/tweeter">
-    <img src="public/images/owl.jpg" alt="Logo" width="200" style="border-radius:10px;">
+    <img src="public/images/owl.jpg" alt="Picture of an owl by Mark Broadhurst" width="200" style="border-radius:10px;">
   </a>
 
 <h2 align="center">Tweeter</h2>
@@ -12,7 +12,7 @@
   <p align="center">
     Tweeter is a simple, single-page Twitter clone.
     <br />
-    <a href="https://github.com/Ethansteip/tinnyapp"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/Ethansteip/tweeter"><strong>Explore the docs »</strong></a>
     <br />
     <br />
   </p>
@@ -51,7 +51,7 @@
 <br>
 <br>
 
-<h4>TinyApp was built to give you the power to keep your URLs short and succint. Our tool is perfect for transforming long and difficult to read URLs down to a 6 digit, alphanumeric string, allowing you to embedd them in your own prjects, blogs or tweets!<h4>
+<h3>Introducing Tweeter, a single page application that allows users to post their thoughts and feelings to an online forum and is gaurenteed to come without the ramblings of Mr.Musk! Tweeter showcases a responsive layout so it'll look good on all your devices and leverages Ajax and jQuery for a seamless user experience.<h3>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -61,10 +61,11 @@
 
 * Node.js
 * Express.js
-* Express - cookie session
-* Bcrypt Password Hashing
-* Embedded Javascript Templating
-* Bootstrap omponenents
+* jQuery
+* Ajax
+* CSS3
+* Body-parser
+* Chance
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -73,22 +74,27 @@
 <!-- GETTING STARTED -->
 ## Getting Started
 
-Getting started with TinyApp is as easy as cloning our Github repo. to your own directory and installing the node dependencies. Lets get started.
+Getting started with Tweeter is as easy as cloning the Github repo to your own directory, installing the node dependencies and running "npm run local". Lets get started.
 
 ### Installation
+<br>
 
 
-1. Clone the repo.
+1. Clone the repo to a folder of your choice.
 ```
-git clone git@github.com:Ethansteip/tinnyapp.git TinyApp
+git clone https://github.com/Ethansteip/tweeter Tweeter
+```
+2. cd into the newly created Tweeter directory.
+```
+cd Tweeter
 ```
 3. Install all dependencies.
 ```
 npm install
 ```
-3. Run the development web server using the `node express_server.js` command.
+4. Run the web server command.
 ```
-node express_server.js
+npm run local
 ```
    
 
@@ -105,6 +111,6 @@ Ethan Steip
 ethan.steip@gmail.com
 ```
 
-Project Link: [TinyApp - url minimizer](https://github.com/Ethansteip/tinnyapp)
+Project Link: [Tweeter - pretty cool social platform](https://github.com/Ethansteip/tweeter)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
