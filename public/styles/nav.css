@@ -22,7 +22,7 @@
   margin-left: 1.5em;
 }
 
-.new-tweet-container {
+.write-new-tweet-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -32,7 +32,6 @@
 .new-tweet-link {
   font-size: 20px;
   color: #FFFFFF;
-  padding-bottom: 0.2em;
 }
 
 a > span {
@@ -43,6 +42,11 @@ a > span {
   font-size: 20px;
   color: red;
   animation: updown 2.5s ease infinite;
+  transition: all 0.3s ease;
+}
+
+.new-tweet-chevron:hover {
+  color:rgb(137, 0, 0);
 }
 
 @keyframes updown {

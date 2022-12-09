@@ -8,29 +8,45 @@ $(document).ready(function() {
 
 /**
  * 
+ * renderError - animates an html error on the page based on the error code recieved from the Jquery submit.
+ * @param {Number} errorCode - 0 equals null input, 1 is > 140 characters
+ * 
+ */
+const renderError = (errorCode) => {
+  if (errorCode === 0) {
+    $('.tweet-error-message').css("display", "none");
+    $('.tweet-error-message').html("Sorry, your tweet didn't contain any information. Please try again!");
+    $('.tweet-error-message').slideDown(1000).css('display', 'flex');
+  } else if (errorCode === 1) {
+    $('.tweet-error-message').css("display", "none");
+    $('.tweet-error-message').slideDown(1000).css('display', 'flex');
+    $('.tweet-error-message').html("Sorry, your tweet was too long. Please keep tweets under 140 characters.");
+  }
+};
+
+/**
+ * 
  * Handle tweet form submission.
  * 
  */
 
 $( "#tweet-form" ).submit(function( event ) {
-
   event.preventDefault();
 
   const tweetData = $(this).serialize();
   const inputLength = $("#character-count-input").val().length;
 
-  // Validate that the form input is neither empty or too long before submitting.
+  // Validate that the form input is neither empty or too long before submitting and render the appropriate error response.
   if (inputLength === 0) {
-    $('.tweet-error-message').html("Sorry, your tweet didn't contain any information. Please try again!");
-    $('.tweet-error-message').slideDown(1000).css('display', 'flex');
+    return renderError(0);
   } else if (inputLength > 140) {
-    $('.tweet-error-message').html("Sorry, your tweet was too long. Please keep tweets under 140 characters.");
-    $('.tweet-error-message').slideDown(1000).css('display', 'flex');
-  } else {
+    return renderError(1);
+  }else {
     $('.tweet-error-message').slideUp(1000);
     $.post( "tweets", tweetData, function(data, status) {
       console.log("The form has been submitted!");
       console.log("Data: ", data, "\nStatus: ", status);
+      // Clear the input feild
       $('#character-count-input').val("");
       // Reload newest tweets
       loadTweets();
@@ -38,6 +54,17 @@ $( "#tweet-form" ).submit(function( event ) {
     });
   }
   
+});
+
+/**
+ * 
+ * Tweet Form sshow/hide animation
+ * 
+ */
+
+ $("#write-new-tweet-container").click(function(){
+  $("#tweet-form").slideToggle(500);
+  $( "#character-count-input" ).focus();
 });
 
 /**

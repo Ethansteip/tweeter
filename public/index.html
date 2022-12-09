@@ -4,6 +4,9 @@
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
 
+    <!-- Viewport settings -->
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
 
@@ -38,9 +41,11 @@
       <a href="/">
         <span class="tweeter-logo">tweeter</span>
       </a>
-      <div class="new-tweet-container">
+      <div id="write-new-tweet-container" class="write-new-tweet-container">
         <a class="new-tweet-link" href="#"><span>Write</span> a new tweet</a>
-        <i class="fa-solid fa-angles-down new-tweet-chevron"></i>
+        <a href="#">
+          <i class="fa-solid fa-angles-down new-tweet-chevron"></i>
+        </a>
       </div>
     </nav>
 
@@ -59,11 +64,11 @@
     <main id="main-container" class="main-container">
 
       <!-- Tweet Submission Form -->
-      <section class="new-tweet">
+      <section id="new-tweet" class="new-tweet">
         <h2>Compose Tweet</h2>
         <form id="tweet-form">
           <label for="tweet-text" class="tweet-input-label">What are you humming about?</label>
-          <textarea id="character-count-input" class="form-input" name="text" id="tweet-text" cols="30" rows="1"></textarea>
+          <textarea id="character-count-input" class="form-input" name="text" id="tweet-text" cols="30" rows="1" autofocus></textarea>
           <div class="button-text-count">
             <button class="form-button" type="submit">Tweet</button>
             <div class="tweet-error-message">

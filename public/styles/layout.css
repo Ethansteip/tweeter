@@ -4,6 +4,12 @@
  * Do not modify these two selectors, please
  */
 
+ /**
+ *
+ * Layout Section Styling
+ *
+ */
+
 html {
   box-sizing: border-box;
 }
@@ -15,14 +21,7 @@ html {
  * Global layout stuff
  */
 
-
-/* remove underline from <a> tags */
-
- a {
-  text-decoration: none;
-}
-
-body {
+ body {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -31,6 +30,17 @@ body {
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
 }
+
+
+/* remove underline from <a> tags */
+
+ a {
+  text-decoration: none;
+}
+
+/*
+ * Additional CSS can be defined below or in other CSS files, as per instructions
+ */
 
 .main-container {
   background-color: #f4f1ec;
@@ -42,5 +52,15 @@ body {
 }
 
 /*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+*
+* Media Queries for responsive layout
+*
+*/
+
+@media only screen and (min-width: 768px) {
+  
+  .main-container {
+    width: 50%;
+  }
+
+}
