@@ -18,7 +18,7 @@ html {
 }
 
 /*
- * Global layout stuff
+ * Global styling
  */
 
  body {
@@ -30,9 +30,6 @@ html {
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
 }
-
-
-/* remove underline from <a> tags */
 
  a {
   text-decoration: none;
@@ -46,21 +43,19 @@ html {
   background-color: #f4f1ec;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  width: 90%;
+  width: 100%;
   margin-bottom: 100px;
 }
 
 /*
-*
 * Media Queries for responsive layout
-*
 */
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 800px) {
   
   .main-container {
-    width: 50%;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 15%;
   }
-
 }

@@ -1,6 +1,6 @@
 /**
 *
-* Tweet section styling
+* Tweets styling
 *
 */
 
@@ -42,7 +42,7 @@
   justify-content: space-between;
   align-items: center;
   border-top: solid #545149 4px;
-  padding-top: 1%;
+  padding-top: 2%;
   font-size: medium;
 }
 
@@ -55,6 +55,7 @@
 .icon {
   color: #4056A1;
   transition: 0.2s;
+  margin-left: 10px;
 }
 
 .icon:hover {

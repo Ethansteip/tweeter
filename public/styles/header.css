@@ -24,16 +24,14 @@ h2 > span {
 }
 
 /*
-*
 * Media Queries for responsive layout
-*
 */
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 800px) {
   
   .header-container {
-    width: 30%;
-    float: left;
+    max-width: 40%;
+    margin-left: auto;
   }
 
 }

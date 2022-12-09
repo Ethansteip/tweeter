@@ -8,8 +8,9 @@
 .new-tweet {
   display: flex;
   flex-direction: column;
-  width: 100%;
-
+  width: 90%;
+  margin: auto;
+  margin-top: 50px;
 }
 
 .tweet-input-label {
@@ -48,6 +49,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 }
 
 .counter {
@@ -61,5 +63,22 @@
 .tweet-error-message {
   display: none;
   color: red;
-  font-size: medium;
+  font-size: 12px;
+}
+
+/*
+* Media Queries for responsive layout
+*/
+
+@media only screen and (min-width: 800px) {
+  .new-tweet {
+    display: flex;
+    flex-direction: column;
+    max-width: 50%;
+    margin: auto;
+  }
+
+  .tweet-error-message {
+    font-size: medium;
+  }
 }

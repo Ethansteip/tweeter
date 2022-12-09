@@ -28,14 +28,17 @@
     <link rel="stylesheet" href="/styles/form.css">
     <!-- Tweet Section css -->
     <link rel="stylesheet" href="/styles/tweet.css">
+    
     <!--  Font-Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
   </head>
 
   <body>
+
     <!-- Top nav bar (fixed) -->
     <nav class="nav-bar">
       <a href="/">
@@ -48,6 +51,9 @@
         </a>
       </div>
     </nav>
+    
+    <!-- Main - contains the header, tweet form and tweets sections-->
+    <main id="main-container" class="main-container">
 
     <!--  Header Section -->
     <header class="header-container">
@@ -60,12 +66,8 @@
       </div>
     </header>
 
-    <!-- Page-specific (main) content here -->
-    <main id="main-container" class="main-container">
-
       <!-- Tweet Submission Form -->
       <section id="new-tweet" class="new-tweet">
-        <h2>Compose Tweet</h2>
         <form id="tweet-form">
           <label for="tweet-text" class="tweet-input-label">What are you humming about?</label>
           <textarea id="character-count-input" class="form-input" name="text" id="tweet-text" cols="30" rows="1" autofocus></textarea>
@@ -79,17 +81,17 @@
           </div>
         </form>
 
-        <!-- Tweets - rendered dynamically through our client.js file -->
+        <!-- Tweets - rendered dynamically through our client.js file and prepended to this section -->
         <section id="tweet-container"></section>
+      </section>
+
         
-
-
-
+        
     </main>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
-    <!-- ccharacter counter -->
+    <!-- character counter script -->
     <script src="/scripts/composer-char-counter.js"></script>
   </body>
 </html>

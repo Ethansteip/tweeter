@@ -1,14 +1,14 @@
 /*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
+ *
+ * client.js - handles tweet building, rendering and appending. Also handles the tweet form submission and validation.
+ * 
  */
 
 $(document).ready(function() {
 
 /**
  * 
- * renderError - animates an html error on the page based on the error code recieved from the Jquery submit.
+ * renderError - animates an html error on the page based on the error code recieved from the Jquery POST submit.
  * @param {Number} errorCode - 0 equals null input, 1 is > 140 characters
  * 
  */
@@ -36,7 +36,7 @@ $( "#tweet-form" ).submit(function( event ) {
   const tweetData = $(this).serialize();
   const inputLength = $("#character-count-input").val().length;
 
-  // Validate that the form input is neither empty or too long before submitting and render the appropriate error response.
+  // Validate that the form input is neither empty or too long before submitting and rendering the appropriate error response.
   if (inputLength === 0) {
     return renderError(0);
   } else if (inputLength > 140) {
@@ -44,21 +44,20 @@ $( "#tweet-form" ).submit(function( event ) {
   }else {
     $('.tweet-error-message').slideUp(1000);
     $.post( "tweets", tweetData, function(data, status) {
-      console.log("The form has been submitted!");
       console.log("Data: ", data, "\nStatus: ", status);
       // Clear the input feild
       $('#character-count-input').val("");
+      // Set counter back to 140
+      $('#character-counter').html("140");
       // Reload newest tweets
       loadTweets();
-      
     });
   }
-  
 });
 
 /**
  * 
- * Tweet Form sshow/hide animation
+ * Tweet form show/hide animation - tied to the "write a new tweet" button located in the nav bar.
  * 
  */
 
@@ -83,12 +82,13 @@ const loadTweets = () => {
     })
 };
 
+// renders tweets on page load.
 loadTweets();
 
 /**
  * 
  * createTweetElement - returns an html string for each tweet that is passed the function.
- * @params {array} tweetObj - a tweet in the form of an object.
+ * @params {Object} tweetObj - a tweet in the form of an object.
  * 
  */
 
@@ -119,7 +119,7 @@ const createTweetElement = (tweetObj) => {
 
 /**
  * 
- * escape - encodes user input to avoid XSS vulnrabilities. 
+ * escape - encodes user input to avoid XSS vulnrabilities. This function is used inside createTweetElement().
  * @param {string} content - the user's input. 
  * 
  */
@@ -141,8 +141,6 @@ const renderTweets = (tweetArray) => {
   for (const tweet of tweetArray) {
     let $tweet = createTweetElement(tweet);
     $('#tweet-container').prepend($tweet);
-
+    }
   }
-}
-
 });
