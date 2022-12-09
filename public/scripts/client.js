@@ -1,6 +1,6 @@
 /*
  *
- * client.js - handles tweet building, rendering and appending. Also handles the tweet form submission and validation.
+ * client.js - handles tweet building, rendering and DOM appending. Also handles the tweet form submission and validation.
  *
  */
 
@@ -133,7 +133,7 @@ $(document).ready(function() {
 
   /**
  *
- * renderTweets - calls the createTweetElement for each tweet in our database and appends it to the DOM.
+ * renderTweets - calls the createTweetElement for each tweet in our database and adds it to the DOM.
  * @params {array} tweetObj - and array of tweet objects.
  *
  */
