@@ -44,10 +44,13 @@
 <!-- ABOUT THE PROJECT -->
 ## About Tweeter
 
-!["Screenshot of URLS page"](https://github.com/Ethansteip/tinnyapp/blob/main/docs/urls_index.png?raw=true)
+!["Exmaple of a Tweet"](https://github.com/Ethansteip/tweeter/blob/master/docs/tweet-example.png?raw=true)
 <br>
 <br>
-!["Screenshot of urls/show page"](https://github.com/Ethansteip/tinnyapp/blob/main/docs/urls_show.png?raw=true)
+!["Mobile and Tablet layout"](https://github.com/Ethansteip/tweeter/blob/master/docs/mobile-tablet-layout.png?raw=true)
+<br>
+<br>
+!["Desktop Layout"](https://github.com/Ethansteip/tweeter/blob/master/docs/Desktop-layout.png?raw=true)
 <br>
 <br>
 
