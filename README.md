@@ -44,6 +44,8 @@
 <!-- ABOUT THE PROJECT -->
 ## About Tweeter
 
+<h4>Introducing Tweeter, a single page application that allows users to post their thoughts and feelings to an online forum and is gaurenteed to come without the ramblings of Mr.Musk! Tweeter showcases a responsive layout so it'll look good on all your devices and leverages Ajax and jQuery for a seamless user experience.<h4>
+
 !["Exmaple of a Tweet"](https://github.com/Ethansteip/tweeter/blob/master/docs/tweet-example.png?raw=true)
 <br>
 <br>
@@ -53,8 +55,6 @@
 !["Desktop Layout"](https://github.com/Ethansteip/tweeter/blob/master/docs/Desktop-layout.png?raw=true)
 <br>
 <br>
-
-<h3>Introducing Tweeter, a single page application that allows users to post their thoughts and feelings to an online forum and is gaurenteed to come without the ramblings of Mr.Musk! Tweeter showcases a responsive layout so it'll look good on all your devices and leverages Ajax and jQuery for a seamless user experience.<h3>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
