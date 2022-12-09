@@ -49,7 +49,7 @@
 !["Exmaple of a Tweet"](https://github.com/Ethansteip/tweeter/blob/master/docs/tweet-example.png?raw=true)
 <br>
 <br>
-!["Mobile and Tablet layout"](https://github.com/Ethansteip/tweeter/blob/master/docs/mobile-tablet-layout.png?raw=true)
+!["Mobile and Tablet layout"](https://github.com/Ethansteip/tweeter/blob/master/docs/Tweet-input-with-text.png?raw=true)
 <br>
 <br>
 !["Desktop Layout"](https://github.com/Ethansteip/tweeter/blob/master/docs/Desktop-layout.png?raw=true)
